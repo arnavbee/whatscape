@@ -1,47 +1,66 @@
 /* Apply background color and font family to the entire document */
 /* Apply styles to the h1 element */
 
-/* Apply styles to the h1 element */
-
+/* Define a font-face for the custom font */
 @font-face {
   font-family: "biennela";
   src: url("/Users/arnavbsingh/Documents/Demo_Fonts");
 }
 
+/* Apply styles to the body */
 body {
   margin-top: 100px;
   background-color: black;
   font-size: 35px; /* Use the appropriate Nimbus Sans font family */
+  font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Style <h> elements */
+/* Style <h2> elements */
 h2 {
   font-weight: bold;
   font-size: 60px;
   padding-top: 30px;
   font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
-  margin-left: 700px;
-  margin-right: 700px;
+  margin-left: 20px; /* Adjust margin for mobile */
+  margin-right: 20px; /* Adjust margin for mobile */
   color: #d3d3d3;
 }
 
-h2 {
-  padding-top: 200px;
-  padding-bottom: 30px;
-  font-weight: bold;
+/* Additional styles for <h2> elements on smaller screens */
+@media (max-width: 768px) {
+  h2 {
+    padding-top: 100px;
+    padding-bottom: 10px;
+    font-size: 40px;
+  }
 }
 
 /* Style <p> elements */
-
 p {
   padding-top: 30px;
-  margin-left: 700px;
-  margin-right: 700px;
+  margin-left: 20px; /* Adjust margin for mobile */
+  margin-right: 20px; /* Adjust margin for mobile */
   font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
   color: #d3d3d3;
   font-weight: lighter;
 }
 
+/* Additional styles for <p> elements on smaller screens */
+@media (max-width: 768px) {
+  p {
+    padding-top: 20px;
+    font-size: 20px;
+  }
+}
+
+/* Style links */
 a {
   color: #d3d3d3;
+}
+
+/* Additional styles for links on smaller screens */
+@media (max-width: 768px) {
+  a {
+    font-size: 20px;
+  }
 }
