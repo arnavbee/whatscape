@@ -9,7 +9,7 @@ body {
   margin-top: 100px;
   background-color: black;
   font-size: 35px; /* Use the appropriate Nimbus Sans font family */
-  font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: biennale;
 }
 
 /* Style <h2> elements */
@@ -37,7 +37,7 @@ p {
   padding-top: 30px;
   margin-left: 20px; /* Adjust margin for mobile */
   margin-right: 20px; /* Adjust margin for mobile */
-  font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: biennale;
   color: #d3d3d3;
   font-weight: lighter;
 }

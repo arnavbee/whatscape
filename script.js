@@ -1122,7 +1122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .force("charge", d3.forceManyBody().strength(-50)) // Increase the strength to make nodes attract each other
     .force("center", d3.forceCenter(centerX, centerY)) // Updated this line
     .force("collision", d3.forceCollide().radius(30)) // Adjust the radius as needed
-    .alpha(0.001) // Set a low initial alpha value
+    .alpha(0) // Set a low initial alpha value
     .alphaDecay(0) // Set a low alphaDecay value
 
     .on("tick", ticked);
