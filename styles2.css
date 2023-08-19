@@ -1,6 +1,3 @@
-/* Apply background color and font family to the entire document */
-/* Apply styles to the h1 element */
-
 /* Define a font-face for the custom font */
 @font-face {
   font-family: "biennela";
@@ -17,7 +14,7 @@ body {
 
 /* Style <h2> elements */
 h2 {
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 60px;
   padding-top: 30px;
   font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
