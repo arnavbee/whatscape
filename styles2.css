@@ -1,0 +1,47 @@
+/* Apply background color and font family to the entire document */
+/* Apply styles to the h1 element */
+
+/* Apply styles to the h1 element */
+
+@font-face {
+  font-family: "biennela";
+  src: url("/Users/arnavbsingh/Documents/Demo_Fonts");
+}
+
+body {
+  margin-top: 100px;
+  background-color: black;
+  font-size: 35px; /* Use the appropriate Nimbus Sans font family */
+}
+
+/* Style <h> elements */
+h2 {
+  font-weight: bold;
+  font-size: 60px;
+  padding-top: 30px;
+  font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 700px;
+  margin-right: 700px;
+  color: #d3d3d3;
+}
+
+h2 {
+  padding-top: 200px;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Style <p> elements */
+
+p {
+  padding-top: 30px;
+  margin-left: 700px;
+  margin-right: 700px;
+  font-family: biennale, Verdana, Geneva, Tahoma, sans-serif;
+  color: #d3d3d3;
+  font-weight: lighter;
+}
+
+a {
+  color: #d3d3d3;
+}
