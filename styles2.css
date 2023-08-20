@@ -16,8 +16,8 @@ h2 {
   font-size: 60px;
   padding-top: 30px;
   font-family: "Inter", sans-serif;
-  margin-left: 700px; /* Adjust margin for mobile */
-  margin-right: 700px; /* Adjust margin for mobile */
+  margin-left: 300px; /* Adjust margin for mobile */
+  margin-right: 300px; /* Adjust margin for mobile */
   color: #d3d3d3;
 }
 
@@ -26,8 +26,8 @@ h2 {
 /* Style <p> elements */
 p {
   padding-top: 20px;
-  margin-left: 700px; /* Adjust margin for mobile */
-  margin-right: 700px; /* Adjust margin for mobile */
+  margin-left: 300px; /* Adjust margin for mobile */
+  margin-right: 300px; /* Adjust margin for mobile */
   font-family: "Inter", sans-serif;
   color: #d3d3d3;
   font-weight: lighter;
