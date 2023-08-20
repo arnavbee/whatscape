@@ -79,11 +79,8 @@ a {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .container {
-    width: 100%;
-    margin-right: 10px;
-    margin-left: 10px;
+    width: 50%;
     justify-content: center;
-    min-height: 50vh;
   }
 
   .menu {
@@ -98,7 +95,7 @@ a {
   .signup,
   .brainmap,
   .chat {
-    width: 100%;
+    width: 50%;
     justify-content: center;
     padding: 10px;
   }
@@ -154,4 +151,32 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
+}
+
+/* styles.css */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
 }
