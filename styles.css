@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   font-family: "Inter", sans-serif;
   background: radial-gradient(circle, #000000, #000000);
@@ -79,7 +79,8 @@ a {
 /* Mobile Styles */
 @media (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 50%;
+    justify-content: center;
   }
 
   .menu {
@@ -94,8 +95,8 @@ a {
   .signup,
   .brainmap,
   .chat {
-    width: 100%;
-    margin: 10px;
+    width: 50%;
+    justify-content: center;
     padding: 10px;
   }
 
@@ -140,21 +141,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Styles for desktop */
-@media (min-width: 992px) {
-  /* Desktop styles */
-}
-
-/* Styles for tablets */
-@media (max-width: 991px) {
-  /* Tablet styles */
-}
-
-/* Styles for smartphones */
-@media (max-width: 767px) {
-  /* Smartphone styles */
 }
 
 #overlay {
