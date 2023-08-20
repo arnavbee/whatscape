@@ -1119,10 +1119,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "link",
       d3.forceLink(graphData.edges).id((d) => d.id)
     )
-    .force("charge", d3.forceManyBody().strength(-50)) // Increase the strength to make nodes attract each other
+    .force("charge", d3.forceManyBody().strength(200)) // Increase the strength to make nodes attract each other
     .force("center", d3.forceCenter(centerX, centerY)) // Updated this line
-    .force("collision", d3.forceCollide().radius(30)) // Adjust the radius as needed
-    .alpha(0) // Set a low initial alpha value
+    .force("collision", d3.forceCollide().radius(25)) // Adjust the radius as needed
+    .alpha(0.001) // Set a low initial alpha value
     .alphaDecay(0) // Set a low alphaDecay value
 
     .on("tick", ticked);
@@ -1134,7 +1134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("stroke", "white"); // Change edge color here;
+    .attr("fil", "grey"); // Change edge color here;
 
   const link = svg
     .selectAll("line")
@@ -1151,8 +1151,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .data(graphData.nodes)
     .enter()
     .append("circle")
-    .attr("r", 10)
-    .attr("fill", "steelblue")
+    .attr("r", 5)
+    .attr("fill", "white")
     .call(
       d3
         .drag()
@@ -1207,7 +1207,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Highlight the node by adding a class or changing its style
     // For example:
     const node = d3.select(`#node-${nodeId}`);
-    node.attr("fill", "violet");
+    node.attr("fill", "blue");
   }
 
   function unhighlightNode(nodeId) {
@@ -1218,7 +1218,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
+    if (!event.active) simulation.alphaTarget(0.1).restart();
     d.fx = d.x;
     d.fy = d.y;
   }
@@ -1229,7 +1229,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
+    if (!event.active) simulation.alphaTarget(0.1);
     d.fx = null;
     d.fy = null;
   }
