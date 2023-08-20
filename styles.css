@@ -83,7 +83,7 @@ a {
     margin-right: 10px;
     margin-left: 10px;
     justify-content: center;
-    size: 50%;
+    min-height: 50vh;
   }
 
   .menu {
