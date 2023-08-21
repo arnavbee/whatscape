@@ -3,6 +3,13 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <!-- Include the Navbar -->
+    <iframe
+      src="navbar.html"
+      frameborder="0"
+      scrolling="no"
+      width="100%"
+    ></iframe>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,14 +17,17 @@
     <title>Brain Map - Delve into the Mind of Naval Ravikant</title>
   </head>
   <body>
+    <div class="dimmed"></div>
+
     <div class="container graph-container">
       <header>
         <h1>Brain Map</h1>
-        <p>
+        <p class="pp">
           Explore the interconnected thoughts and ideas of Naval Ravikant
           through a visual brain map.
         </p>
       </header>
+      <button id="toggleEdgesButton">Connections</button>
 
       <div id="graph"></div>
       <div class="dimmed"></div>
