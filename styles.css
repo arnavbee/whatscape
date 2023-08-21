@@ -6,6 +6,15 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 90px;
+  padding: 0;
+  margin-top: 0;
+}
+
+.pp {
+  font-size: 30px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -105,12 +114,18 @@ a {
   }
 }
 
+#toggleEdgesButton {
+  size: 100px;
+  padding: 25px;
+  font-size: 30px;
+}
+
 .tooltip {
   position: absolute;
   color: #fff;
   background-color: black;
   opacity: 0;
-  font-size: 20px;
+  font-size: 30px;
   pointer-events: none;
 }
 
@@ -143,6 +158,11 @@ node:hover {
 }
 .highlighted {
   fill: rgb(255, 254, 255); /* Change the color as needed */
+}
+
+#graph {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 #graph-container {
