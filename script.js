@@ -1121,7 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     )
     .force("charge", d3.forceManyBody().strength(300)) // Increase the strength to make nodes attract each other
     .force("center", d3.forceCenter(centerX, centerY)) // Updated this line
-    .force("collision", d3.forceCollide().radius(35)) // Adjust the radius as needed
+    .force("collision", d3.forceCollide().radius(30)) // Adjust the radius as needed
     .alpha(0.001) // Set a low initial alpha value
     .alphaDecay(0) // Set a low alphaDecay value
 
@@ -1134,7 +1134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("fil", "grey"); // Change edge color here;
+    .attr("stroke", "grey"); // Change edge color here;
 
   const link = svg
     .selectAll("line")
@@ -1212,6 +1212,25 @@ document.addEventListener("DOMContentLoaded", function () {
     d.fx = null;
     d.fy = null;
   }
+
+  function toggleEdges() {
+    const link = d3.selectAll("line"); // Select all edges
+
+    // Check the current visibility state of edges
+    const areEdgesVisible = link.style("display") !== "none";
+
+    // Toggle the visibility based on the current state
+    if (areEdgesVisible) {
+      link.style("display", "none"); // Hide edges
+    } else {
+      link.style("display", "block"); // Show edges
+    }
+  }
+
+  // Add a click event listener to the button
+  document
+    .getElementById("toggleEdgesButton")
+    .addEventListener("click", toggleEdges);
 
   function showTooltip(event, d) {
     // Highlight the hovered node
