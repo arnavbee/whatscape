@@ -107,11 +107,10 @@ a {
 
 .tooltip {
   position: absolute;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  padding: 10px;
+  color: #fff;
+  background-color: black;
   opacity: 0;
-  font-size: 14px;
+  font-size: 20px;
   pointer-events: none;
 }
 
@@ -122,17 +121,28 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0); /* Set initial opacity to 0 */
-  z-index: 1000;
-  display: none;
-  opacity: 0;
-  pointer-events: none; /* Disable pointer events when not visible */
-  transition: opacity 0.3s; /* Add a transition for smooth fade-in/fade-out */
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the opacity (0.5) for the desired dimness */
+  pointer-events: none; /* Allows interaction with elements behind the overlay */
+  z-index: 999; /* Ensures the overlay is on top of other content */
+  display: none; /* Initially hidden */
+}
+
+/* Show the dimmed overlay when the tooltip is displayed */
+.dimmed-visible {
+  display: block;
 }
 
 /* Highlight effect for the node */
+node:hover {
+  color: white;
+}
 .highlighted {
-  fill: rgb(82, 7, 82); /* Change the color as needed */
+  fill: rgb(255, 254, 255); /* Change the color as needed */
 }
 
 #graph-container {
@@ -141,16 +151,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
 }
 
 /* styles.css */
@@ -169,7 +169,6 @@ a {
 
 .navbar li {
   display: inline;
-  margin-right: 20px;
 }
 
 .navbar a {
