@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
         label: "Node 55",
         previewText: "Happiness",
         content: "<p>Content for Node 3</p>",
-        url: "CONTENTS PAGE.html",
+        url: "Happiness/CONTENTS PAGEH.html",
       },
       {
         id: "node56",
@@ -1119,9 +1119,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "link",
       d3.forceLink(graphData.edges).id((d) => d.id)
     )
-    .force("charge", d3.forceManyBody().strength(200)) // Increase the strength to make nodes attract each other
+    .force("charge", d3.forceManyBody().strength(300)) // Increase the strength to make nodes attract each other
     .force("center", d3.forceCenter(centerX, centerY)) // Updated this line
-    .force("collision", d3.forceCollide().radius(25)) // Adjust the radius as needed
+    .force("collision", d3.forceCollide().radius(35)) // Adjust the radius as needed
     .alpha(0.001) // Set a low initial alpha value
     .alphaDecay(0) // Set a low alphaDecay value
 
@@ -1144,14 +1144,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("Links created:", link);
 
-  const dimmedBackground = document.querySelector(".dimmed");
-
   const node = svg
     .selectAll("circle")
     .data(graphData.nodes)
     .enter()
     .append("circle")
-    .attr("r", 5)
+    .attr("r", (d) =>
+      d.label === "Node 8" || d.label === "Node 55" || d.label === "Node 74"
+        ? 12
+        : 5
+    ) // Adjust sizes as needed
+
     .attr("fill", "white")
     .call(
       d3
@@ -1193,30 +1196,6 @@ document.addEventListener("DOMContentLoaded", function () {
       );
   }
 
-  const overlay = document.getElementById("overlay");
-
-  function showOverlay() {
-    overlay.style.display = "block";
-  }
-
-  function hideOverlay() {
-    overlay.style.display = "none";
-  }
-
-  function highlightNode(nodeId) {
-    // Highlight the node by adding a class or changing its style
-    // For example:
-    const node = d3.select(`#node-${nodeId}`);
-    node.attr("fill", "blue");
-  }
-
-  function unhighlightNode(nodeId) {
-    // Unhighlight the node by removing the class or resetting its style
-    // For example:
-    const node = d3.select(`#node-${nodeId}`);
-    node.attr("fill", "steelblue");
-  }
-
   function dragstarted(event, d) {
     if (!event.active) simulation.alphaTarget(0.1).restart();
     d.fx = d.x;
@@ -1235,29 +1214,30 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showTooltip(event, d) {
-    tooltip.transition().duration(200).style("opacity", 0.9);
+    // Highlight the hovered node
+    node.classed("highlighted", (n) => n.id === d.id);
+
+    // Select the dimmed background and make it visible
+
+    // Select the tooltip and set its content and position
+    const tooltip = d3.select(".tooltip");
+    tooltip.transition().duration(200).style("opacity", 0.8);
     tooltip
       .html(d.previewText)
       .style("left", event.pageX + "px")
       .style("top", event.pageY + "px");
-
-    // Highlight the node
-    node.classed("highlighted", (n) => n.id === d.id);
-
-    // Show the dimmed background with a smooth fade-in
-    dimmedBackground.style.opacity = 1;
-    dimmedBackground.style.pointerEvents = "auto"; // Enable pointer events
   }
 
   function hideTooltip() {
+    // Hide the dimmed background
+    d3.select(".dimmed").classed("dimmed-visible", false);
+
+    // Hide the tooltip
+    const tooltip = d3.select(".tooltip");
     tooltip.transition().duration(500).style("opacity", 0);
 
     // Remove the highlight from all nodes
     node.classed("highlighted", false);
-
-    // Hide the dimmed background with a smooth fade-out
-    dimmedBackground.style.opacity = 0;
-    dimmedBackground.style.pointerEvents = "none"; // Disable pointer events
   }
 
   function openNodeContent(event, d) {
