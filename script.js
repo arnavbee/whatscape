@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
         label: "Node 55",
         previewText: "Happiness",
         content: "<p>Content for Node 3</p>",
-        url: "Happiness/CONTENTS PAGEH.html",
+        url: "Happiness/CONTENTS PAGE.html",
       },
       {
         id: "node56",
