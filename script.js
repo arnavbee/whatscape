@@ -1119,7 +1119,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "link",
       d3.forceLink(graphData.edges).id((d) => d.id)
     )
-    .force("charge", d3.forceManyBody().strength(300)) // Increase the strength to make nodes attract each other
+    .force("charge", d3.forceManyBody().strength(200)) // Increase the strength to make nodes attract each other
     .force("center", d3.forceCenter(centerX, centerY)) // Updated this line
     .force("collision", d3.forceCollide().radius(30)) // Adjust the radius as needed
     .alpha(0.001) // Set a low initial alpha value
